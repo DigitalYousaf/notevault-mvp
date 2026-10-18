@@ -76,7 +76,7 @@ the database travels with the container.
 
 ```
 server.js            Express app: API + static frontend
-db.js                SQLite schema + all queries (node:sqlite, zero deps)
+db.js                SQLite schema + all queries (better-sqlite3, runs on Node 16+)
 auth.js              scrypt password hashing + token sessions
 routes/auth.js       signup / login / logout
 routes/notes.js      notes CRUD, search, tag filter

@@ -1,1 +1,17 @@
-{"dependencies":{"express":"^4.19.2"},"description":"NoteVault — personal notes app with real backend + SQLite database (SMIT Vibe Engineering capstone assignment: full-stack MVP)","license":"MIT","main":"server.js","name":"notevault","scripts":{"start":"node server.js"},"version":"1.0.0"}
+{
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^4.19.2"
+  },
+  "description": "NoteVault — personal notes app with real backend + SQLite database (SMIT Vibe Engineering capstone assignment: full-stack MVP)",
+  "license": "MIT",
+  "main": "server.js",
+  "name": "notevault",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=18"
+  }
+}

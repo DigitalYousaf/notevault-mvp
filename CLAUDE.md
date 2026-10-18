@@ -15,7 +15,7 @@ with full-text search and tag filters. Built for the SMIT assignment
 ## Tech stack
 
 - **Backend:** Node.js 24 + Express 4 (only npm dependency)
-- **Database:** SQLite via Node's built-in `node:sqlite` — zero extra deps.
+- **Database:** SQLite via `better-sqlite3` — runs on any Node 16+ host (switched from `node:sqlite` so free no-card hosts can run it).
   File: `data/notevault.db`, auto-created on boot (`db.js`)
 - **Auth:** `node:crypto` scrypt password hashing (salt:hash hex);
   random 256-bit Bearer tokens, in-memory sessions with 7-day TTL (`auth.js`)
@@ -57,7 +57,7 @@ browser ──fetch/JSON──▶ Express (server.js)
 | File | Purpose |
 |------|---------|
 | `server.js` | Express wiring: JSON body parsing, API routes, static frontend, error handler |
-| `db.js` | Schema + all SQL. `DatabaseSync` from `node:sqlite` |
+| `db.js` | Schema + all SQL. better-sqlite3 `Database` |
 | `auth.js` | `hashPassword` / `verifyPassword` (scrypt), `createSession` / `getSession` / `destroySession` |
 | `routes/auth.js` | signup (validates, 409 on duplicate), login (generic 401 message), logout |
 | `routes/notes.js` | CRUD + `?search=` + `?tag=` + `/tags`; note `GET /tags` is defined **before** `GET /:id` so Express doesn't swallow it |
