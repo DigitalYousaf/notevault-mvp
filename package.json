@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "better-sqlite3": "^13.0.3",
     "express": "^4.19.2"
   },
   "description": "NoteVault — personal notes app with real backend + SQLite database (SMIT Vibe Engineering capstone assignment: full-stack MVP)",
@@ -12,6 +11,6 @@
   },
   "version": "1.0.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }

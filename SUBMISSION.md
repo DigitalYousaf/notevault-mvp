@@ -26,7 +26,7 @@ hosted anywhere with a persistent disk.
 ## Technologies / services used
 
 Node.js + Express backend (single npm dependency), SQLite database via Node's
-`better-sqlite3` (file auto-created on boot),
+built-in `node:sqlite` (zero extra dependencies, file auto-created on boot),
 and a vanilla HTML/CSS/JS frontend with no build step. Password hashing uses
 `node:crypto` scrypt; auth is Bearer-token based. Docker + docker-compose for
 hosting with a persistent volume for the database file.

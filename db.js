@@ -1,13 +1,13 @@
-// db.js — SQLite database layer (better-sqlite3; runs on Node 16+, no card needed on free hosts).
+// db.js — SQLite database layer (Node's built-in node:sqlite, no extra dependency).
 // Creates data/notevault.db on first boot and ensures the schema exists.
-const Database = require('better-sqlite3');
+const { DatabaseSync } = require('node:sqlite');
 const path = require('path');
 const fs = require('fs');
 
 const DATA_DIR = path.join(__dirname, 'data');
 fs.mkdirSync(DATA_DIR, { recursive: true });
 
-const db = new Database(path.join(DATA_DIR, 'notevault.db'));
+const db = new DatabaseSync(path.join(DATA_DIR, 'notevault.db'));
 
 // --- Schema -----------------------------------------------------------------
 db.exec(`
